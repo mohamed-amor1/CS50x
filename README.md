@@ -10,6 +10,7 @@ This section contains the assignments I completed during the course.
 - [Week 2 Arrays](/week-2-arrays): Arrays, functions, and string manipulation in C.
 - [Week 3 Algorithms](/week-3-algorithms): Algorithms and sorting in C.
 - [Week 4 Memory](/week-4-memory): Memory allocation and data structures in C.
-- [Week 5 Data structures](/week-5-data-structures): Hash tables and spell checking in C.
+- [Week 5 Data Structures](/week-5-data-structures): Hash tables and spell checking in C.
 - [Week 6 Python](/week-6-python): Text processing and Python programming.
-- [Week 7 SQL](/week-7-sql): SQL and web development with Flask.
+- [Week 7 SQL](/week-7-sql): SQL.
+- [Week 8 HTML, CSS, JavaScript](/week-8): Web programming with HTML, CSS, JavaScript, and Flask.

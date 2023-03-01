@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -31,4 +32,7 @@ int main(void)
         y = y + 1;
     }
     printf("Years: %d\n", y);
+
+    system("pause");
+    return 0;
 }

@@ -1,0 +1,7 @@
+vscode hacks
+
+ctrl + C : interrupt execution
+ctrl + L : clear terminal
+
+Copy: Select the text you want to copy, then press "Ctrl + Shift + C" (or "Cmd + Shift + C" on Mac) .
+Paste: Move the cursor to the location where you want to paste the copied text, then press "Ctrl + Shift + V"

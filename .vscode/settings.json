@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "string_view": "c",
+        "stdio.h": "c",
+        "string": "c",
+        "array": "c",
+        "stdlib.h": "c",
+        "1.C": "cpp",
+        "hello.C": "cpp"
+    },
+    "gitdoc.enabled": true
+}

@@ -1,0 +1,19 @@
+Notes:
+
+
+The & operator is used to get the address of a variable in C. When you pass a variable to a function that expects a pointer to that variable, you need to use the & operator to pass the address of the variable.
+
+For example, when using scanf() to read input into a variable, you need to pass the address of the variable using the & operator so that scanf() can modify the variable directly in memory:
+
+int number;
+scanf("%d", &number);
+
+In this example, &number is used to pass the address of the number variable to the scanf() function.
+
+On the other hand, when you pass an array to a function, you do not need to use the & operator, because the name of an array is already a pointer to the first element of the array. For example, when printing the contents of an array, you can pass the name of the array directly to printf():
+
+
+char name[50] = "John";
+printf("Name: %s\n", name);
+
+In this example, name is passed directly to the printf() function without the & operator. This works because name is already a pointer to the first element of the char array, and printf() expects a pointer to a char array for the %s format specifier.

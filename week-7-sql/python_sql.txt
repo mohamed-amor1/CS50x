@@ -1,0 +1,29 @@
+# Python + SQL using CS50 library.
+
+The cs50 library is a Python library developed by the CS50 team at Harvard University. It provides a simple way to interact with SQL databases, including SQLite. Here's an example of how to use the cs50 library to operate SQLite databases in Python:
+
+
+from cs50 import SQL
+
+# Create a connection to the database
+db = SQL("sqlite:///mydatabase.db")
+
+# Execute a SQL statement to create a table
+db.execute("CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)")
+
+# Execute a SQL statement to insert data into the table
+db.execute("INSERT INTO employees (name, age) VALUES (?, ?)", "John Doe", 30) # the ? placeholders in the SQL statement are replaced with the name and age variables in the order they appear.
+
+# Execute a SQL statement to select data from the table
+rows = db.execute("SELECT * FROM employees")
+
+# Print the results
+for row in rows:
+    print(row["id"], row["name"], row["age"])
+
+
+In this example, we first create a connection to the database using the SQL() method of the cs50 library. We then use the execute() method of the connection object to execute SQL statements. Note that the cs50 library uses parameterized SQL statements, which help prevent SQL injection attacks.
+
+We create a table using the CREATE TABLE SQL statement, and we insert data into the table using the INSERT INTO SQL statement. We select data from the table using the SELECT SQL statement, and we loop through the results to print them.
+
+Note that the cs50 library abstracts away some of the details of working with SQL databases, so it may not be as flexible as using the sqlite3 module directly. However, it can be a good option for simple database operations.

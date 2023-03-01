@@ -1,0 +1,136 @@
+SQL
+
+CRUD:
+C: Creating data ==> CREATE, INSERT
+R: Reading data ==> SELECT
+U: Updating data ==> UPDATE
+D: Deleting data ==> DELETE, DROP
+
+
+CREATE TABLE table (column type, ...)
+
+The ...> prompt is just a visual indicator that you are continuing a command from a previous line, and it does not affect the execution of the command itself.
+SQLite will display the ...> prompt after the first line to indicate that it is waiting for additional input to complete the command.
+
+
+In SQLite, the '.timer' command is a special command that allows you to measure the amount of time it takes for various operations to execute.
+When you run the .timer ON command, SQLite will start measuring the time it takes to execute subsequent SQL commands.
+
+
+
+
+
+______________________________________
+most commonly used SQLite3 commands:
+
+sqlite3: Start the SQLite3 command-line tool
+.open <database_name>: Open a database file
+.tables: List all tables in the database
+.schema <table_name>: Show the schema for a specific table
+SELECT <column(s)> FROM <table> WHERE <condition>: Query data from a table
+INSERT INTO <table> (<column(s)>) VALUES (<values>): Insert data into a table
+UPDATE <table> SET <column> = <value> WHERE <condition>: Update data in a table
+DELETE FROM <table> WHERE <condition>: Delete data from a table
+.quit: Exit the SQLite3 command-line tool
+
+_____________________________
+Functions:
+
+COUNT(): Used to count the number of rows in a table or the number of occurrences of a specific value.
+SUM(): Used to calculate the sum of a set of values.
+AVG(): Used to calculate the average of a set of values.
+MAX(): Used to find the maximum value in a set of values.
+MIN(): Used to find the minimum value in a set of values.
+GROUP BY: Used to group rows in a table based on a specific column or set of columns.
+ORDER BY: Used to sort the rows in a table based on a specific column or set of columns.
+JOIN: Used to combine data from two or more tables based on a common column.
+UPPER(): Used to convert all characters in a text string to uppercase.
+LOWER(): Used to convert all characters in a text string to lowercase.
+DISTINCT: Used to remove duplicate values from a result set.
+TRIM(): Used to remove leading or trailing spaces from a text string.
+CONCAT(): Used to concatenate two or more text strings.
+SUBSTR(): Used to extract a substring from a text string.
+LENGTH(): Used to return the length of a text string.
+ROUND(): Used to round a numeric value to a specified number of decimal places.
+CAST(): Used to convert a value from one data type to another.
+
+....
+
+WHERE
+LIKE  # example WHERE name LILE 'Larry D%'
+ORDER BY
+LIMIT
+GROUP BY
+...
+
+______________________
+Types:
+BLOB: Binary Large Object data type is used to store large binary data, such as images, audio, or video files, in a database.
+INTEGER
+NUMERIC
+REAL # float, decimals
+TEXT
+
+________________________
+Constraints:
+
+PRIMARY KEY: Ensures that each row in a table has a unique identifier.
+FOREIGN KEY: Establishes a relationship between two tables, ensuring that the values in a specific column of one table match the values in another table.
+NOT NULL: Ensures that a specific column in a table cannot contain NULL (missing) values.
+UNIQUE: Ensures that the values in a specific column of a table are unique and cannot be repeated.
+CHECK: Ensures that the values in a specific column of a table meet certain conditions or criteria.
+
+___________________________________________________
+Nesting:
+nesting refers to the practice of including one query inside another query.
+This is also known as a subquery.
+A subquery is a query that is executed inside another query.
+Its results are used as input for the outer query.
+The subquery is enclosed in parentheses and is often used to filter or manipulate data in the outer query.
+
+example:
+SELECT *
+FROM customers
+WHERE customer_id IN (
+    SELECT customer_id
+    FROM orders
+    WHERE order_date >= DATEADD(month, -1, GETDATE())
+)
+
+# In this query, the inner query (enclosed in parentheses) retrieves a list of all customer IDs for orders placed in the past month.
+# The outer query then uses the "IN" operator to retrieve all rows from the "customers" table where the customer ID matches one of the IDs returned by the subquery.
+
+
+_________________________________________________
+Index:
+
+Index in SQLite3 is like a table of contents in a book.
+Just as a table of contents helps you quickly find the page number of a particular chapter, an index helps SQLite quickly find the rows in a table that match a certain search condition.
+Without an index, SQLite would have to scan through the entire table to find the relevant rows, which could be slow and inefficient for large tables.
+By creating an index on one or more columns, SQLite can avoid this scan and quickly find the rows that match the search condition.
+However, creating an index can also slow down insert and update operations, so it's important to use indexes judiciously and only on columns that are frequently searched or sorted.
+
+
+To create an index in SQLite3, you can use the CREATE INDEX statement with the following syntax:
+
+CREATE INDEX index_name
+ON table_name (column_name1, column_name2, ...);
+
+Here's what each part of the syntax means:
+
+CREATE INDEX: This is the command to create an index.
+index_name: This is the name you want to give to the new index.
+ON: This keyword indicates that you want to create the index on a specific table.
+table_name: This is the name of the table on which you want to create the index.
+(column_name1, column_name2, ...): This is a list of one or more column names for which you want to create the index. You can specify multiple columns to create a composite index.
+
+For example, let's say you have a table called employees with columns id, name, age, and salary. If you frequently search for employees based on their age, you might want to create an index on the age column. Here's how you could create the index:
+
+
+CREATE INDEX age_index
+ON employees (age);
+
+This would create a new index called age_index on the employees table, based on the age column.
+
+
+

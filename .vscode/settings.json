@@ -8,5 +8,6 @@
         "1.C": "cpp",
         "hello.C": "cpp"
     },
-    "gitdoc.enabled": true
+    "gitdoc.enabled": true,
+    "cmake.configureOnOpen": true
 }

@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
         if (buffer[i] != signature[i])
         {
             printf("Likely not a PDF!\n");
+            fclose(file);
             return 0;
         }
     }

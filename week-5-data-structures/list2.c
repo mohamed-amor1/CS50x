@@ -8,7 +8,7 @@ typedef struct node
     struct node *next;
 } node;
 
-#define LIST_SIZE 2
+#define LIST_SIZE 4
 
 void unload(node *list);
 void visualize(node *list);

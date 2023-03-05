@@ -40,4 +40,9 @@ int hash(char phrase[])
     // Convert the first character of the phrase to uppercase and subtract 'A'
     // to get an index from 0 to 25
     return toupper(phrase[0]) - 'A';
+
+    // A = 65
+    // A - A = 0
+    // B - A = 1
+    // Z - A = 25
 }

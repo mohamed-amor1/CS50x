@@ -1,6 +1,4 @@
-from cs50 import get_string
-
-before = get_string("Before: ")
+before = input("Before: ")
 after = before.upper()
 print(f"After:  {after}")
 

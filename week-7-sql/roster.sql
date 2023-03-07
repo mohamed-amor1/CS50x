@@ -102,3 +102,26 @@ For example, we should ensure every student and house has an ID, then use thoses
 house assignments table.
 */
 
+-- Creating new tables
+CREATE TABLE houses (
+id INTEGER NOT NULL,
+house TEXT NOT NULL,
+head TEXT NOT NULL,
+PRIMARY KEY(id)
+);
+
+-- NOT NULL : "required"
+
+.schema
+
+SELECT * FROM houses;
+
+-- Inserting
+INSERT INTO houses(house, head)
+VALUES ('Gryffindor', 'McGonagall');
+SELECT * FROM houses;
+
+INSERT INTO houses (house, head)
+VALUES ('Slytherin', 'Severus Snape');
+SELECT * FROM houses;
+

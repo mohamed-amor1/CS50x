@@ -139,3 +139,6 @@ WHERE house_id =
 SELECT * FROM assignments
 JOIN houses
 ON assignments.house_id = houses.id;
+
+-- UPDATE ... SET
+UPDATE shows SET title = "How I Met Your Mother" WHERE title = "How i met your mother";

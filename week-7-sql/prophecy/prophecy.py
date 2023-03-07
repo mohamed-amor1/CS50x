@@ -9,8 +9,34 @@ conn = sqlite3.connect('roster.db')
 # Create a cursor object
 cur = conn.cursor()
 
-# Execute the SQL statement to copy columns from table1 to table2
-cur.execute("INSERT INTO houses (house, head) SELECT house, head FROM students")
+house_names = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+
+# Iterate over the house names and insert records for each student in each house
+for house_name in house_names:
+    # Get the house ID from the houses table
+    cur.execute("SELECT id FROM houses WHERE house = ?", (house_name,))
+    house_id = cur.fetchone()[0]
+
+    # Get the list of student names for the current house
+    cur.execute(
+        "SELECT student_name FROM students WHERE house = ?", (house_name,))
+    student_name = [row[0] for row in cur.fetchall()]
+
+    # Insert records for each student in the current house
+    for student_name in student_name:
+        # Get the student ID from the students table
+        cur.execute(
+            "SELECT id FROM students WHERE student_name = ?", (student_name,))
+        student_id = cur.fetchone()[0]
+
+        # Define the SQL statement
+        sql = "INSERT INTO assignments (student_id, house_id) VALUES (?, ?)"
+
+        # Execute the SQL statement with the foreign key values
+        cur.execute(sql, (student_id, house_id))
+
+
+conn.commit()
 
 
 # Commit the changes
@@ -33,7 +59,7 @@ for row in rows:
 # with open("students.csv", "r") as file:
 #      reader = csv.DictReader(file)
 #      for row in reader:
-         
+
 #          print(row)
 
 # # db = SQL("sqlite:///favorites.db")

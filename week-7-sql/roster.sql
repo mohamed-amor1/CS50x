@@ -125,3 +125,17 @@ INSERT INTO houses (house, head)
 VALUES ('Slytherin', 'Severus Snape');
 SELECT * FROM houses;
 
+-- SELECTs (nesting)
+SELECT COUNT(student_id)
+FROM assignments
+WHERE house_id = 
+(
+    SELECT id
+    FROM houses
+    WHERE house = 'Gryffindor'
+);
+
+-- JOIN (combining tables together)
+SELECT * FROM assignments
+JOIN houses
+ON assignments.house_id = houses.id;

@@ -4,4 +4,4 @@ Your query should output a table with a single column for the name of each song.
 You should not make any assumptions about what Post Malone’s artist_id is.
 */
 .schema
-SELECT name FROM songs WHERE(SELECT artists.id FROM artists WHERE artists.name = 'Post Malone' AND artists.id = songs.artist_id);
+SELECT name FROM songs WHERE artist_id = (SELECT id FROM artists WHERE name = 'Post Malone');

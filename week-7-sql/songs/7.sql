@@ -4,4 +4,4 @@ Your query should output a table with a single column and a single row containin
 You should not make any assumptions about what Drake’s artist_id is.
 */
 .schema
-SELECT AVG(energy) FROM songs WHERE(SELECT artists.id FROM artists WHERE artists.name = 'Drake' AND artists.id = songs.artist_id);
+SELECT AVG(energy) FROM songs WHERE artist_id = (SELECT id FROM artists WHERE artists.name = 'Drake');

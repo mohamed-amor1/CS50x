@@ -1,0 +1,70 @@
+Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery. Interviews were conducted today with three witnesses who were present at the time – each of their interview transcripts mentions the bakery.
+
+
+Witness 1: Sometime within ten minutes of the theft, I saw the thief get into a car in the bakery parking lot and drive away. If you have security footage from the bakery parking lot, you might want to look for cars that left the parking lot in that time frame.
+
+List of suspects according to Witness 1
+name	license_plate
+Vanessa	5P2BI95
+Bruce	94KL13X
+Barry	6P58WS2
+Luca	4328GD8
+Sofia	G412CB7
+Iman	L93JTIZ
+Diana	322W7JE
+Kelsey	0NTHK55
+
+Witness 2:	I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery, I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
+
+List of suspects according to Witness 2:
+name
+Bruce
+Diana
+Brooke
+Kenny
+Iman
+Luca
+Taylor
+Benista
+
+-- Possible suspects so far are narrowed down to 4 :
+Bruce, Luca, Iman, Diana.
+
+Witness 3: As the thief was leaving the bakery, they called someone who talked to them for less than a minute. In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the phone to purchase the flight ticket.
+
+--  caller_name	receiver_name
+Sofia	Jack
+Kelsey	Larry
+Bruce	Robin
+Kelsey	Melissa
+Taylor	James
+Diana	Philip
+Carina	Jacqueline
+Kenny	Doris
+Benista	Anna
+
+-- Possible suspects so far are narrowed down to 2:
+Bruce, Diana.
+
+-- earliest flight tomorrow (day 29)
+id	= 36
+origin_airport_id= 8 = Fiftyville
+destination_airport_id=	4 = New York City	
+year=2021	
+month	=7
+day	=29
+hour	=8
+minute = 20
+							
+-- passengers on flight 36
+name
+Doris
+Sofia
+Bruce
+Edward
+Kelsey
+Taylor
+Kenny
+Luca
+-- ==> the thief is Bruce by deduction -> He's the only person who appears on all the list of suspects/tables.
+-- His accomplice is Robin (from the updates phone_calls table)

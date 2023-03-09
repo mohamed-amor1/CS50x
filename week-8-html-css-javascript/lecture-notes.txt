@@ -1,0 +1,86 @@
+-- domain name and top-level domain (TLD) --
+A domain name is a unique name that identifies a website on the internet. It is used to locate and access the website through a web browser. For example, "google.com" is the domain name for the website of the popular search engine Google.
+
+A top-level domain (TLD) is the highest level of the domain name system hierarchy. It is the last part of the domain name, and it identifies the type of organization or geographic location of the website. For example, in the domain name "google.com," ".com" is the TLD, which stands for "commercial." Other examples of TLDs include ".org" for organizations, ".edu" for educational institutions, ".gov" for government agencies, and country code TLDs such as ".us" for the United States or ".ca" for Canada.
+
+
+-- hostname --
+hostname is typically associated with a domain name. For example, the hostname "www" in the domain name "www.google.com" refers to the specific web server that hosts the website for the Google search engine.
+
+-- GET and POST --
+GET is used to retrieve data from the server, while POST is used to submit data to the server.
+
+GET is used to retrieve data from the server. When a user submits a form using the GET method, the data entered in the form is appended to the URL as a query string. The data is visible in the URL, which means that it can be bookmarked, cached, or shared. GET requests are often used for simple, read-only operations such as searching for information.
+
+POST is used to submit data to the server. When a user submits a form using the POST method, the data is sent in the request body, rather than in the URL. This means that the data is not visible in the URL, and it cannot be bookmarked or cached. POST requests are often used for more complex, write operations such as submitting a form that includes sensitive information.
+
+
+
+-- HTTP request headers
+GET / HTTP/1.1
+Host: example.com
+
+"GET / HTTP/1.1" specifies the HTTP method (GET), the resource being requested (/), and the version of the HTTP protocol being used (HTTP/1.1).
+
+"Host: example.com" specifies the host name of the server where the resource is located. In this case, the resource is located on the server example.com.
+
+HTTP request headers are used by the client (e.g. web browser) to send additional information about the request to the server. In this example, the request is asking for the root document of the server example.com using the GET method, and the host name of the server is provided in the Host header.
+
+-- curl
+Curl is a command-line tool for transferring data from or to a server, using various protocols including HTTP, FTP, SMTP, and many others. It supports a wide range of options and protocols, making it a versatile tool for working with web-based services.
+
+Curl can be used to perform a variety of tasks such as downloading files, testing APIs, sending emails, and much more. It can also be used to debug network connectivity issues, as it provides detailed information about the communication between the client and the server.
+
+e.g.
+curl -I https://www.harvard.edu/
+
+-- The most common HTTP/HTTPS status codes (error codes) are:
+
+200 OK - The request was successful, and the server returned the requested data.
+201 Created - The request was successful, and a new resource was created.
+204 No Content - The request was successful, but there is no content to return.
+301 Moved Permanently - The requested resource has been permanently moved to a new URL.
+302 Found - The requested resource has been temporarily moved to a new URL.
+400 Bad Request - The server cannot understand the request due to invalid syntax.
+401 Unauthorized - The client must authenticate before making the request.
+403 Forbidden - The client does not have permission to access the requested resource.
+404 Not Found - The requested resource does not exist on the server.
+500 Internal Server Error - The server encountered an unexpected error and cannot fulfill the request.
+503 Service Unavailable - The server is currently unable to handle the request, usually because it is overloaded or undergoing maintenance.
+
+-- Search 
+GET /search?q=cats HTTP/1.1
+Host: www.google.com
+
+This is an HTTP request sent to the server www.google.com to retrieve search results for the query "cats".
+
+The request includes two main parts:
+
+The first line specifies the HTTP method (GET), the resource being requested (/search?q=cats), and the version of the HTTP protocol being used (HTTP/1.1).
+
+The second line specifies the host name of the server where the resource is located. In this case, the resource is located on the server www.google.com.
+
+The request is asking the server to return search results for the keyword "cats". When a web browser sends a request like this to a server, the server responds with a corresponding HTTP response that includes the requested data (in this case, the search results).
+
+-- ? 
+The question mark in the URL indicates the start of a query string. A query string is a part of the URL that contains additional information that the server can use to process the request.
+
+In this case, the query string is "?q=cats". The "q" parameter indicates the search query that the client is requesting, and "cats" is the value of that parameter. When the server receives the request, it can use the value of the "q" parameter to perform a search and return the corresponding results.
+
+The query string can contain multiple parameters, separated by an ampersand (&) character. For example, if we wanted to search for "cats" on a specific website, the URL might look like this: "/search?q=cats&site=example.com". The server could use both parameters to perform a search for "cats" on the site "example.com".
+
+-- HTML
+HTML stands for HyperText Markup Language. It is a markup language used to create and structure content for the web.
+
+HTML provides a way to define the structure and layout of web pages, including text, images, and other media, and allows developers to add semantic meaning to the content. With HTML, developers can create hyperlinks, lists, tables, forms, and many other elements that make up modern web pages.
+
+HTML documents are composed of a series of elements, each with its own start tag, end tag, and content. The tags indicate the type of element and how it should be displayed on the web page. For example, the <h1> tag is used to indicate a heading, while the <p> tag is used to indicate a paragraph.
+
+Modern web development often involves using HTML in combination with other web technologies such as CSS (Cascading Style Sheets) for styling and layout, and JavaScript for interactivity and dynamic effects.
+
+
+Tags and attributes are two key components of HTML markup.
+
+Tags are used to define the structure and content of elements in an HTML document. They are enclosed in angle brackets (<>) and can include a tag name, optional attributes, and content. For example, the <p> tag is used to define a paragraph, and the <img> tag is used to insert an image into the document.
+
+Attributes are additional properties that can be added to an HTML tag to provide more information about the element. Attributes are added to the opening tag of an element and take the form of name/value pairs. For example, the <img> tag can have attributes such as "src" to specify the image source and "alt" to provide alternative text for the image.

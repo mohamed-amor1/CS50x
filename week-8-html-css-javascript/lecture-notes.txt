@@ -128,3 +128,60 @@ Optionally, you can add other attributes to the <img> tag to specify the width, 
 <img src="image.jpg" alt="Image description" width="400" height="300" style="border: 1px solid black;">
 
 
+-- CSS
+CSS (Cascading Style Sheets) is a style sheet language used for describing the look and formatting of an HTML (HyperText Markup Language) document. It is used to add style, layout, and visual effects to web pages and user interfaces written in HTML.
+
+CSS allows developers to control the presentation of web pages by separating the presentation style from the content of the document. By creating a separate CSS file, developers can specify how the HTML elements should be displayed, such as the color, font size, spacing, and positioning of the elements.
+
+CSS is a powerful tool for creating visually appealing and user-friendly web pages. With CSS, you can apply styles to individual HTML elements or groups of elements, create layouts and grids, add animations and transitions, and more.
+
+CSS works by targeting specific HTML elements and applying styles to them using selectors. Selectors can target elements by tag name, class name, ID, attributes, and more. CSS also supports the use of cascading rules, which allow multiple styles to be applied to the same element, with the final style determined by a set of prioritization rules.
+
+CSS is an important part of web development, and its use is widespread across the internet. Many websites, web applications, and user interfaces rely heavily on CSS to create a visually pleasing and user-friendly experience for their users.
+
+-- CSS properties 
+In CSS, properties are used to control the visual appearance of HTML elements. Each CSS property is a key-value pair, where the key is the property name and the value is the property value.
+
+CSS properties are used to control a wide variety of visual aspects of web pages, such as the color, size, font, spacing, and layout of HTML elements. Some examples of CSS properties include:
+
+color: sets the color of the text
+font-size: sets the size of the font
+background-color: sets the background color of an element
+margin: sets the margin around an element
+padding: sets the padding within an element
+display: sets the display type of an element
+position: sets the positioning of an element
+border: sets the border around an element
+text-align: sets the horizontal alignment of text within an element
+
+By using CSS properties, developers can create visually appealing and user-friendly web pages, and control the presentation of HTML content in a way that separates it from the content itself.
+
+-- CSS selectors
+In CSS, selectors are used to target specific HTML elements in order to apply styles to them. Here are brief explanations of four common types of CSS selectors:
+
+Type Selector: This selector targets all HTML elements of a particular type. For example, the selector p targets all <p> elements. The syntax for a type selector is simply the name of the element.
+
+Class Selector: This selector targets all HTML elements that have a particular class attribute. The class attribute allows developers to group elements together and apply styles to them as a group. The syntax for a class selector is .classname, where classname is the name of the class.
+
+ID Selector: This selector targets a single HTML element that has a particular ID attribute. The ID attribute is used to uniquely identify an element on a web page, and can only be used once per page. The syntax for an ID selector is #idname, where idname is the name of the ID.
+
+Attribute Selector: This selector targets all HTML elements that have a particular attribute. Attributes provide additional information about HTML elements, such as the href attribute on an <a> element. The syntax for an attribute selector is [attribute=value], where attribute is the name of the attribute and value is the value of the attribute that you want to target.
+
+Selectors can also be combined to create more complex targeting of HTML elements, such as targeting only <p> elements with a particular class, or targeting only <a> elements with a particular attribute value.
+
+-- JavaScript 
+JavaScript events are actions or occurrences that happen in an HTML document, such as a user clicking a button, a page finishing loading, or an input field changing value. JavaScript can detect these events and respond to them by running a specific function or code block. This allows developers to create interactive web pages that respond to user actions and update dynamically without requiring a page refresh.
+
+Here are some common JavaScript events for HTML files:
+
+onclick: This event occurs when the user clicks an HTML element, such as a button or link. To use this event, you can attach a function to the element's onclick attribute, or use the addEventListener method to register a function to be called when the element is clicked.
+
+onload: This event occurs when the web page finishes loading in the browser. You can use this event to run initialization code, such as setting up event listeners or making API calls.
+
+onsubmit: This event occurs when the user submits a form by clicking a submit button or pressing the Enter key. You can use this event to validate form data or make an AJAX call to submit the form data to a server.
+
+onkeyup and onkeydown: These events occur when the user presses or releases a key on the keyboard while an input field or textarea is in focus. You can use these events to perform actions based on the user's input, such as filtering a list of items based on a search query.
+
+onchange: This event occurs when the value of an input field, select dropdown, or checkbox changes. You can use this event to update the UI or perform other actions based on the user's selection.
+
+There are many more JavaScript events that you can use to create dynamic and interactive web pages. To learn more about events in JavaScript, you can check out the official MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/Events

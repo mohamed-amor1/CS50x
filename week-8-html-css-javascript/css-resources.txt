@@ -1,0 +1,14 @@
+CSS frameworks and libraries that offer pre-designed table styles:
+
+Semantic UI - https://semantic-ui.com/collections/table.html
+Materialize - https://materializecss.com/table.html
+Bulma - https://bulma.io/documentation/elements/table/
+Foundation - https://foundation.zurb.com/sites/docs/v/5.5.3/components/tables.html
+
+Each of these frameworks has its own table styles that I can use in my project. To use them, I will need to include their CSS file in my HTML file
+
+
+
+
+
+https://cdnjs.com/libraries/semantic-ui

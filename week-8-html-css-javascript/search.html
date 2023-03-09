@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>search</title>
+  </head>
+  <body>
+    <form action="https://www.google.com/search" method="get">
+      <input
+        autocomplete="off"
+        autofocus
+        name="q"
+        placeholder="Query"
+        type="search"
+      />
+      <input type="submit" value="Google Search" />
+    </form>
+  </body>
+</html>
+
+<!--This code creates a simple search form in HTML. The form contains two input fields:
+
+<input name="q" type="search" />: This input field is a text box where the user can enter their search query. The name attribute is set to "q", which is the name of the parameter that will be sent to the server when the form is submitted.
+<input type="submit" />: This input field is a submit button that the user can click to submit the search form. When the button is clicked, the form data (in this case, the search query entered by the user) will be sent to the server.
+
+When the form is submitted, the browser will send a GET request to the server, with the search query as a query parameter in the URL. For example, if the user enters "apple" as their search query and submits the form, the browser will navigate to a URL like this:
+
+https://example.com/search?q=apple
+
+On the server side, the application can receive this search query and use it to perform a search and return the relevant results to the user.
+
+-->

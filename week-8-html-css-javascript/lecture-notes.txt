@@ -84,3 +84,47 @@ Tags and attributes are two key components of HTML markup.
 Tags are used to define the structure and content of elements in an HTML document. They are enclosed in angle brackets (<>) and can include a tag name, optional attributes, and content. For example, the <p> tag is used to define a paragraph, and the <img> tag is used to insert an image into the document.
 
 Attributes are additional properties that can be added to an HTML tag to provide more information about the element. Attributes are added to the opening tag of an element and take the form of name/value pairs. For example, the <img> tag can have attributes such as "src" to specify the image source and "alt" to provide alternative text for the image.
+
+-- Document Object Model (DOM)
+the Document Object Model (DOM) is a hierarchical representation of an HTML document that allows developers to manipulate the structure, content, and styling of the webpage using scripting languages like JavaScript. The DOM provides a set of objects, methods, and properties that enable developers to dynamically modify the HTML elements and their attributes, add or remove elements, and respond to user interactions with the webpage. The DOM also allows for the creation of interactive and dynamic web pages that can respond to user actions and events, making HTML-based web applications possible.
+
+-- Headings
+HTML provides six levels of headings, ranging from <h1> to <h6>. The different levels are used to indicate the hierarchical structure of the content on the webpage, with <h1> being the most important or prominent heading, and <h6> being the least important.
+
+-- List
+<ol> stands for "ordered list" and is used to create a list of items that are in a specific order or sequence. The <ol> tag is typically paired with the closing </ol> tag, and each item in the list is represented by a <li> tag.
+
+<ul> stands for "unordered list" and is used to create a list of items that doesn't have a specific order or sequence. The <ul> tag is typically paired with the closing </ul> tag, and each item in the list is represented by a <li> tag.
+
+<li> stands for "list item" and is used to create each item in the list. Each <li> tag should be nested within a <ul> tag. Here's an example of how to use <ul> and <li> tags to create a simple unordered list:
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+-- Table 
+<table> is used to define the beginning of a table, and should be paired with the closing </table> tag. Inside the <table> element, one or more <tr> elements can be used to define each row of the table, and within each <tr> element one or more <td> elements can be used to define each cell of the table.
+
+<table>
+  <tr>
+    <td>Row 1, Column 1</td>
+    <td>Row 1, Column 2</td>
+  </tr>
+  <tr>
+    <td>Row 2, Column 1</td>
+    <td>Row 2, Column 2</td>
+  </tr>
+</table>
+
+
+-- Image 
+To display an image in HTML, you can use the <img> tag with the src attribute set to the URL of the image file. Here's an example:
+
+<img alt="image description" src="image.jpg" />
+
+Optionally, you can add other attributes to the <img> tag to specify the width, height, or CSS styles of the image. For example:
+
+<img src="image.jpg" alt="Image description" width="400" height="300" style="border: 1px solid black;">
+
+

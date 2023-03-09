@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- Demonstrates keyup and template literals -->
+
+<html lang="en">
+  <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let input = document.querySelector("input");
+        input.addEventListener("keyup", function (event) {
+          let name = document.querySelector("p");
+          if (input.value) {
+            name.innerHTML = `hello, ${input.value}`;
+          } else {
+            name.innerHTML = "hello, whoever you are";
+          }
+        });
+      });
+    </script>
+    <title>hello</title>
+  </head>
+  <body>
+    <form>
+      <input autocomplete="off" autofocus placeholder="Name" type="text" />
+    </form>
+    <p></p>
+  </body>
+</html>
+
+<!--
+    This JavaScript code adds an event listener to an input field in an HTML document, so that when the user types in the input field, a message is displayed in a <p> element on the page. Here's a breakdown of what each line of the code is doing:
+
+<script>: This is an HTML script tag that indicates that the code inside is JavaScript code.
+
+document.addEventListener("DOMContentLoaded", function () {...});: This line adds an event listener to the DOMContentLoaded event, which fires when the HTML document has finished loading and is ready to be manipulated by JavaScript. When the DOMContentLoaded event fires, the function inside the curly braces will be executed.
+
+let input = document.querySelector("input");: This line uses the querySelector() method to find the first input element in the HTML document, and assigns it to a variable called input.
+
+input.addEventListener("keyup", function (event) {...});: This line adds an event listener to the keyup event on the input element. The keyup event fires when the user releases a key on their keyboard while the input field has focus. When the keyup event fires, the function inside the curly braces will be executed.
+
+let name = document.querySelector("p");: This line uses the querySelector() method to find the first <p> element in the HTML document, and assigns it to a variable called name.
+
+if (input.value) {...} else {...}: This is an if/else statement that checks if the value of the input element is not empty. If the value is not empty, it sets the innerHTML of the name element to a string that says "hello, " followed by the value of the input element. If the value is empty, it sets the innerHTML of the name element to a string that says "hello, whoever you are".
+
+name.innerHTML = hello, ${input.value};: This line sets the innerHTML of the name element to a string that says "hello, " followed by the value of the input element, using a template literal with string interpolation to include the value of the input element.
+
+name.innerHTML = "hello, whoever you are";: This line sets the innerHTML of the name element to a string that says "hello, whoever you are" if the value of the input element is empty.
+
+In summary, this code adds an event listener to an input field so that when the user types in the input field, a message is displayed in a <p> element on the page, welcoming them by name if they have typed something, or saying "hello, whoever you are" if they haven't.
+
+-->

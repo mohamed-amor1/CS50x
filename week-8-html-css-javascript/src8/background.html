@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!-- Demonstrates programmatic changes to style -->
+
+<html lang="en">
+  <head>
+    <title>background</title>
+  </head>
+  <body>
+    <button id="red">R</button>
+    <button id="green">G</button>
+    <button id="blue">B</button>
+    <script>
+      let body = document.querySelector("body");
+      document.querySelector("#red").addEventListener("click", function () {
+        body.style.backgroundColor = "red";
+      });
+      document.querySelector("#green").addEventListener("click", function () {
+        body.style.backgroundColor = "green";
+      });
+      document.querySelector("#blue").addEventListener("click", function () {
+        body.style.backgroundColor = "blue";
+      });
+    </script>
+  </body>
+</html>
+
+<!--
+This code adds three buttons to a webpage, labeled "R", "G", and "B". When each button is clicked, the background color of the webpage changes to the corresponding color: red, green, or blue.
+
+Here's a breakdown of what's happening in the code:
+
+The HTML code creates three buttons and a script tag inside the body element of a webpage.
+The script tag contains JavaScript code that sets up event listeners for each button.
+The document.querySelector() method is used to select the body element and each button by their respective ID attributes. The ID attribute of a HTML element is a unique identifier that allows you to select that specific element with JavaScript.
+The addEventListener() method is then used to add a click event listener to each button, which triggers a function when the button is clicked.
+When a button is clicked, the function changes the backgroundColor property of the body element to the corresponding color. The style property of an element allows you to modify the CSS styles applied to that element.
+In summary, this code creates three buttons that change the background color of a webpage when clicked, using event listeners and the style property of the body element.
+
+
+
+
+-->

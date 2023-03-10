@@ -88,6 +88,45 @@ Attributes are additional properties that can be added to an HTML tag to provide
 -- Document Object Model (DOM)
 the Document Object Model (DOM) is a hierarchical representation of an HTML document that allows developers to manipulate the structure, content, and styling of the webpage using scripting languages like JavaScript. The DOM provides a set of objects, methods, and properties that enable developers to dynamically modify the HTML elements and their attributes, add or remove elements, and respond to user interactions with the webpage. The DOM also allows for the creation of interactive and dynamic web pages that can respond to user actions and events, making HTML-based web applications possible.
 
+Here are some of the most common DOM properties:
+
+textContent: This property sets or returns the text content of an element.
+innerHTML: This property sets or returns the HTML content of an element.
+value: This property sets or returns the value of an input element.
+src: This property sets or returns the URL of an image or a script element.
+href: This property sets or returns the URL of a hyperlink.
+className: This property sets or returns the class name(s) of an element.
+id: This property sets or returns the id of an element.
+style: This property sets or returns the CSS styles of an element.
+parentNode: This property returns the parent node of an element.
+childNodes: This property returns a collection of child nodes of an element.
+firstChild: This property returns the first child node of an element.
+lastChild: This property returns the last child node of an element.
+nextSibling: This property returns the next sibling node of an element.
+previousSibling: This property returns the previous sibling node of an element.
+offsetHeight: This property returns the height of an element, including padding, border, and scrollbar (if any).
+offsetWidth: This property returns the width of an element, including padding, border, and scrollbar (if any).
+
+Here are some of the most common DOM methods:
+
+getElementById(): This method returns the first element with the specified ID.
+getElementsByTagName(): This method returns a collection of elements with the specified tag name.
+getElementsByClassName(): This method returns a collection of elements with the specified class name.
+querySelector(): This method returns the first element that matches a specified CSS selector.
+querySelectorAll(): This method returns a collection of all elements that match a specified CSS selector.
+createElement(): This method creates a new HTML element.
+appendChild(): This method adds a new child node to an element.
+removeChild(): This method removes a child node from an element.
+replaceChild(): This method replaces a child node of an element with a new node.
+setAttribute(): This method sets the value of an attribute on an element.
+getAttribute(): This method returns the value of a specified attribute on an element.
+addEventListener(): This method attaches an event handler to an element.
+removeEventListener(): This method removes an event handler from an element.
+getComputedStyle(): This method returns the computed style of an element.
+classList.add(): This method adds a class to an element's list of classes.
+classList.remove(): This method removes a class from an element's list of classes.
+
+
 -- Headings
 HTML provides six levels of headings, ranging from <h1> to <h6>. The different levels are used to indicate the hierarchical structure of the content on the webpage, with <h1> being the most important or prominent heading, and <h6> being the least important.
 

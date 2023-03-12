@@ -12,3 +12,4 @@ Each of these frameworks has its own table styles that I can use in my project. 
 
 
 https://cdnjs.com/libraries/semantic-ui
+https://www.w3schools.com/ 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Scoreboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: xxx-large;
+      }
+      td {
+        border: 2px solid black;
+      }
+      #add1 {
+        background-color: yellow;
+      }
+      #add2 {
+        background-color: violet;
+      }
+      h1 {
+        font-size: 60px;
+        font-weight: 600;
+        background-image: linear-gradient(45deg, #553c9a, #ee4b2b);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+      }
+      body {
+        background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-medium-champagne-solid-color-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: 600;
+        background-image: conic-gradient(
+          #553c9a 30%,
+          #ee4b2b 40%,
+          #ee4b2b 70%,
+          #00c2cb 80%,
+          #553c9a
+        );
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+      p {
+        font-size: 10px;
+        font-weight: 500;
+        color: #000000;
+        margin: 20px;
+        padding: 0px;
+        text-align: center;
+        font-family: "Courier Prime", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Stay ahead of the game with our scoreboard app</h1>
+    </div>
+    <div>
+      <h2>Duke vs. UNC Basketball Game</h2>
+    </div>
+    <main>
+      <table class="pure-table pure-table-bordered">
+        <tr>
+          <td>
+            <img
+              src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/goduke.com/responsive_2019/images/svgs/duke_logo.svg"
+              alt="Duke"
+            />
+          </td>
+          <td>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d7/North_Carolina_Tar_Heels_logo.svg"
+              alt="UNC"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td id="score1">0</td>
+          <td id="score2">0</td>
+        </tr>
+        <tr>
+          <td>
+            <button class="pure-button" id="add1">+1</button>
+          </td>
+          <td>
+            <button class="pure-button" id="add2">+1</button>
+          </td>
+        </tr>
+      </table>
+      <div></div>
+      <div>
+        <p>Click the buttons to add a point to each team</p>
+      </div>
+    </main>
+    <script>
+      let team1 = 0;
+      let team2 = 0;
+
+      document.querySelector("#add1").onclick = function () {
+        team1 = team1 + 1;
+        document.querySelector("#score1").innerHTML = team1;
+      };
+      document.querySelector("#add2").onclick = function () {
+        team2 = team2 + 1;
+        document.querySelector("#score2").innerHTML = team2;
+      };
+    </script>
+  </body>
+</html>

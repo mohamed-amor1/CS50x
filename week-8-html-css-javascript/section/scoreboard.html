@@ -8,27 +8,55 @@
       integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
       crossorigin="anonymous"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+
       table {
         border: 2px solid black;
         border-collapse: collapse;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        font-size: xxx-large;
+        font-size: x-large;
       }
       td {
         border: 2px solid black;
       }
       #add1 {
-        background-color: yellow;
+        background-color: whitesmoke;
       }
       #add2 {
+        background-color: whitesmoke;
+      }
+      #add3 {
+        background-color: greenyellow;
+      }
+      #add4 {
         background-color: violet;
       }
+      #add5 {
+        background-color: greenyellow;
+      }
+      #add6 {
+        background-color: violet;
+      }
+
+      #footer2 {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        color: #000000;
+        font-family: "Montserrat", sans-serif;
+      }
+
       h1 {
-        font-size: 60px;
+        font-size: 50px;
         font-weight: 600;
         background-image: linear-gradient(45deg, #553c9a, #ee4b2b);
         color: transparent;
@@ -37,12 +65,12 @@
         text-align: center;
       }
       body {
-        background-image: url("https://www.solidbackgrounds.com/images/1920x1080/1920x1080-medium-champagne-solid-color-background.jpg");
+        background-image: url("pexels-sergio-souza-2291004.jpg");
         background-repeat: no-repeat;
         background-size: cover;
       }
       h2 {
-        font-size: 40px;
+        font-size: 30px;
         font-weight: 600;
         background-image: conic-gradient(
           #553c9a 30%,
@@ -56,7 +84,6 @@
         -webkit-background-clip: text;
         text-align: center;
       }
-      @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
       p {
         font-size: 10px;
         font-weight: 500;
@@ -67,6 +94,10 @@
         font-family: "Courier Prime", monospace;
       }
     </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
   </head>
   <body>
     <div>
@@ -97,16 +128,20 @@
         </tr>
         <tr>
           <td>
-            <button class="pure-button" id="add1">+1</button>
+            <button class="pure-button" id="add1">+1PT</button>
+            <button class="pure-button" id="add3">+2PTS</button>
+            <button class="pure-button" id="add4">+3PTS</button>
           </td>
           <td>
-            <button class="pure-button" id="add2">+1</button>
+            <button class="pure-button" id="add2">+1PT</button>
+            <button class="pure-button" id="add5">+2PTS</button>
+            <button class="pure-button" id="add6">+3PTS</button>
           </td>
         </tr>
       </table>
       <div></div>
       <div>
-        <p>Click the buttons to add a point to each team</p>
+        <p>Click the buttons to add points to each team</p>
       </div>
     </main>
     <script>
@@ -116,11 +151,79 @@
       document.querySelector("#add1").onclick = function () {
         team1 = team1 + 1;
         document.querySelector("#score1").innerHTML = team1;
+        if (team1 > 10) {
+          alert("Duke has won!");
+          team1 = 0;
+          team2 = 0;
+          document.querySelector("#score2").innerHTML = 0;
+          document.querySelector("#score1").innerHTML = 0;
+        }
+      };
+      document.querySelector("#add3").onclick = function () {
+        team1 = team1 + 2;
+        document.querySelector("#score1").innerHTML = team1;
+        if (team1 > 10) {
+          alert("Duke has won!");
+          team1 = 0;
+          team2 = 0;
+          document.querySelector("#score2").innerHTML = 0;
+          document.querySelector("#score1").innerHTML = 0;
+        }
+      };
+      document.querySelector("#add4").onclick = function () {
+        team1 = team1 + 3;
+        document.querySelector("#score1").innerHTML = team1;
+        if (team1 > 10) {
+          alert("Duke has won!");
+          team1 = 0;
+          team2 = 0;
+          document.querySelector("#score2").innerHTML = 0;
+          document.querySelector("#score1").innerHTML = 0;
+        }
       };
       document.querySelector("#add2").onclick = function () {
         team2 = team2 + 1;
         document.querySelector("#score2").innerHTML = team2;
+        if (team2 > 10) {
+          alert("UNC has won!");
+          team1 = 0;
+          team2 = 0;
+          document.querySelector("#score2").innerHTML = 0;
+          document.querySelector("#score1").innerHTML = 0;
+        }
+      };
+      document.querySelector("#add5").onclick = function () {
+        team2 = team2 + 2;
+        document.querySelector("#score2").innerHTML = team2;
+        if (team2 > 10) {
+          alert("UNC has won!");
+          team1 = 0;
+          team2 = 0;
+          document.querySelector("#score2").innerHTML = 0;
+          document.querySelector("#score1").innerHTML = 0;
+        }
+      };
+      document.querySelector("#add6").onclick = function () {
+        team2 = team2 + 3;
+        document.querySelector("#score2").innerHTML = team2;
+        if (team2 > 10) {
+          alert("UNC has won!");
+          team1 = 0;
+          team2 = 0;
+          document.querySelector("#score2").innerHTML = 0;
+          document.querySelector("#score1").innerHTML = 0;
+        }
       };
     </script>
+    <div>
+      <footer id="footer2">Made with ❤️ in Tunis</footer>
+    </div>
   </body>
 </html>
+
+<!-- InnerHTML is a way to change what's inside an HTML element using JavaScript.
+  For example, if you have a paragraph element on your webpage that says "Hello, world!", you can use the InnerHTML property to change the contents of the paragraph element to "Goodbye, world!" instead.
+  it directly changes what's inside the html tags of the selected id that we work on.
+
+
+-->

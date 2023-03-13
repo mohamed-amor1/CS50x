@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+    <script>
+      // Run script once DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#butt1").onclick = function () {
+          const butt2 = document.getElementById("butt1");
+          butt1.style.backgroundColor = "red";
+          document.querySelector("#answer").innerHTML = "Incorrect";
+        };
+        document.querySelector("#butt2").onclick = function () {
+          const butt2 = document.getElementById("butt2");
+          butt2.style.backgroundColor = "green";
+          document.querySelector("#answer").innerHTML = "Correct!";
+        };
+        document.querySelector("#butt3").onclick = function () {
+          const butt3 = document.getElementById("butt3");
+          butt3.style.backgroundColor = "red";
+          document.querySelector("#answer").innerHTML = "Incorrect";
+        };
+        document.querySelector("#butt4").onclick = function () {
+          const butt4 = document.getElementById("butt4");
+          butt4.style.backgroundColor = "red";
+          document.querySelector("#answer").innerHTML = "Incorrect";
+        };
+
+        document.querySelector("#envoyer").onclick = function () {
+          const field = document.getElementById("input1");
+          if (field.value === "blue" || field.value === "Blue") {
+            field.style.backgroundColor = "green";
+            document.querySelector("#answer2").innerHTML = "Correct!";
+          } else {
+            field.style.backgroundColor = "red";
+            document.querySelector("#answer2").innerHTML = "Incorrect";
+          }
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <!-- TODO: Add multiple choice question here -->
+        <h3>What is the capital of France?</h3>
+        <button id="butt1">Berlin</button>
+        <button id="butt2">Paris</button>
+        <button id="butt3">London</button>
+        <button id="butt4">Madrid</button>
+        <p id="answer"></p>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <!-- TODO: Add free response question here -->
+        <h3>What color is the sky on a clear day?</h3>
+        <input type="text" id="input1" />
+        <button type="submit" id="envoyer">Check Answer</button>
+        <p id="answer2"></p>
+      </div>
+    </div>
+  </body>
+</html>

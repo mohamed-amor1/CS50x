@@ -2,6 +2,9 @@
 
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,9 +17,148 @@
       crossorigin="anonymous"
     ></script>
     <link href="styles.css" rel="stylesheet" />
+
     <title>My Webpage</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+
+    <script>
+      const aboutLink = document.querySelector('a[href="#aboutsection"]');
+
+      // Add a click event listener to the About menu item
+      aboutLink.addEventListener("click", function (event) {
+        // Prevent the default behavior of the link
+        event.preventDefault();
+
+        // Get the position of the About section relative to the top of the page
+        const aboutSection = document.getElementById("aboutsection");
+        const aboutSectionTop = aboutSection.getBoundingClientRect().top;
+
+        // Scroll smoothly to the About section
+        window.scrollTo({
+          top: aboutSectionTop,
+          behavior: "smooth",
+        });
+      });
+    </script>
   </head>
   <body>
-    hello, homepage
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">home<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutsection">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/purplegem903"
+                >github</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">cs50</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:medamor.9@gmail.com">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" id="left">
+      <h1>Mohamed Amor</h1>
+      <h2>Programmer and Technologist</h2>
+      <div class="social-media">
+        <a href="https://www.facebook.com">
+          <img src="facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.twitter.com">
+          <img src="twitter.png" alt="Twitter" />
+        </a>
+        <a href="https://www.instagram.com">
+          <img src="instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://www.linkedin.com">
+          <img src="LinkedIn.png" alt="Linkedin" />
+        </a>
+        <a href="https://www.telegram.org/">
+          <img src="Telegram.png" alt="Telegram" />
+        </a>
+      </div>
+    </div>
+    <div class="container" id="right">
+      <img
+        src="avatar.svg"
+        alt="Example Image"
+        class="img-fluid"
+        width="550px"
+      />
+    </div>
+
+    <p></p>
+    <div class="empty-space"></div>
+
+    <div class="container" style="max-width: 100%; overflow-x: hidden">
+      <div class="row">
+        <div class="col-sm-4" style="background-color: white">
+          <h3 style="text-align: center">About</h3>
+        </div>
+        <div class="col-sm-7" style="background-color: white">
+          <p>
+            As a programmer who has completed the rigorous CS50x course at
+            Harvard, I have developed a strong foundation in computer science
+            fundamentals and a passion for creating innovative and user-friendly
+            websites and applications. I am always eager to take on new
+            challenges and push myself to learn and grow as a developer.
+          </p>
+          <p>
+            My skills in web development include proficiency in HTML, CSS, and
+            JavaScript, as well as experience with various front-end frameworks
+            such as Bootstrap and React. I am also proficient in back-end
+            development, having worked with Node.js and Express to build and
+            deploy web applications.
+          </p>
+          <p>
+            In addition to my technical skills, I am a highly motivated and
+            detail-oriented individual with excellent communication and
+            problem-solving skills. I understand the importance of staying
+            up-to-date with the latest technologies and industry trends, and am
+            always striving to improve my skills and knowledge.
+          </p>
+          <p>
+            Whether it's building a website from scratch or contributing to a
+            team project, I am committed to delivering high-quality work that
+            meets or exceeds client expectations. I am excited about the
+            opportunity to use my skills and experience to help bring your
+            vision to life.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <h6>© 2022 Mohamed Amor.<br /></h6>
+    </footer>
   </body>
 </html>

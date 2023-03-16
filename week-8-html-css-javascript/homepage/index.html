@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -17,15 +17,12 @@
       crossorigin="anonymous"
     ></script>
     <link href="styles.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="hacker.png" />
 
     <title>My Webpage</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
 
     <script>
-      const aboutLink = document.querySelector('a[href="#aboutsection"]');
+      const aboutLink = document.querySelector('a[href="#about-section"]');
 
       // Add a click event listener to the About menu item
       aboutLink.addEventListener("click", function (event) {
@@ -33,7 +30,7 @@
         event.preventDefault();
 
         // Get the position of the About section relative to the top of the page
-        const aboutSection = document.getElementById("aboutsection");
+        const aboutSection = document.getElementById("scrollreference");
         const aboutSectionTop = aboutSection.getBoundingClientRect().top;
 
         // Scroll smoothly to the About section
@@ -43,10 +40,39 @@
         });
       });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 200) {
+          $("#back-to-top-btn").removeClass("d-none");
+        } else {
+          $("#back-to-top-btn").addClass("d-none");
+        }
+      });
+
+      $("#back-to-top-btn").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      });
+    </script>
+    <script>
+      // Get the navbar element
+      var navbar = document.getElementById("navbarNavDropdown");
+
+      // Get the hamburger menu button
+      var navbarToggler = document.querySelector(".navbar-toggler");
+
+      // Add a click event listener to the button
+      navbarToggler.addEventListener("click", function () {
+        // Toggle the 'show' class on the navbar
+        navbar.classList.toggle("show");
+      });
+    </script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top w-100">
+      <div class="container-fluid mx-auto">
         <a class="navbar-brand" href="#"></a>
         <button
           class="navbar-toggler"
@@ -54,11 +80,12 @@
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
-          aria-expanded="false"
+          aria-expanded="true"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNavDropdown"
@@ -67,28 +94,51 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">home<span class="sr-only"></span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#aboutsection">about</a>
+            <li class="nav-item about">
+              <a class="nav-link" href="#scrollreference">about</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/purplegem903"
                 >github</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">cs50</a>
+              <a
+                class="nav-link"
+                href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x"
+                >cs50</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="mailto:medamor.9@gmail.com">contact</a>
+              <a class="nav-link me-5" href="mailto:medamor.9@gmail.com"
+                >contact</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container" id="left">
-      <h1>Mohamed Amor</h1>
-      <h2>Programmer and Technologist</h2>
+    <div class="container d-flex flex-column mt-5">
+      <img
+        src="avatar.svg"
+        alt="Example Image"
+        class="img-fluid"
+        width="350px"
+      />
+    </div>
+    <div
+      class="container d-flex flex-column mb-5"
+      style="
+        text-align: center;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      "
+    >
+      <h1>Mohamed <span style="font-style: italic">Amor</span></h1>
+      <h5 style="font-weight: 300">Technology Enthusiast and CS50x Learner</h5>
       <div class="social-media">
         <a href="https://www.facebook.com">
           <img src="facebook.png" alt="Facebook" />
@@ -107,24 +157,20 @@
         </a>
       </div>
     </div>
-    <div class="container" id="right">
-      <img
-        src="avatar.svg"
-        alt="Example Image"
-        class="img-fluid"
-        width="550px"
-      />
-    </div>
-
     <p></p>
-    <div class="empty-space"></div>
 
-    <div class="container" style="max-width: 100%; overflow-x: hidden">
-      <div class="row">
-        <div class="col-sm-4" style="background-color: white">
-          <h3 style="text-align: center">About</h3>
+    <div
+      class="container d-flex flex-column mt-5 mb-5"
+      style="max-width: 100%; overflow-x: hidden"
+    >
+      <div class="row" style="place-content: center">
+        <div class="col-sm-1 text-center d-flex align-items-xxl-start">
+          <h3 class="d-inline-block me-5 me-sm-0 text-end mb-4 mb-sm-3 pe-sm-3">
+            About
+          </h3>
         </div>
-        <div class="col-sm-7" style="background-color: white">
+
+        <div class="col-sm-6" id="scrollreference">
           <p>
             As a programmer who has completed the rigorous CS50x course at
             Harvard, I have developed a strong foundation in computer science
@@ -157,8 +203,37 @@
       </div>
     </div>
 
-    <footer>
-      <h6>© 2022 Mohamed Amor.<br /></h6>
+    <footer class="container d-flex flex-column mt-0 mb-0">
+      <h6>© 2023 Mohamed Amor.<br /></h6>
     </footer>
+    <button id="myBtn" onclick="scrollToTop()">TOP</button>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          document
+            .getElementById("myBtn")
+            .classList.add("show"); /* add the "show"
+    class to the button */
+        } else {
+          document
+            .getElementById("myBtn")
+            .classList.remove("show"); /* remove the
+    "show" class from the button */
+        }
+      }
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        }); /* smoothly scroll to the
+    top of the page */
+      }
+    </script>
   </body>
 </html>

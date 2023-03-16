@@ -17,10 +17,35 @@
       crossorigin="anonymous"
     ></script>
     <link href="styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <link rel="shortcut icon" type="image/png" href="hacker.png" />
 
     <title>My Webpage</title>
+    <script>
+      // Get the navbar toggler element
+      const navbarTogglerr = document.querySelector(".navbar-toggler");
 
+      // Get the navbar collapse element
+      const navbarCollapse = document.querySelector(".navbar-collapse");
+
+      // Add an event listener to the navbar toggler for when it's clicked
+      navbarTogglerr.addEventListener("click", function () {
+        // If the navbar collapse element is shown, add the animate__flipOutX class and remove the animate__flip class
+        if (navbarCollapse.classList.contains("show")) {
+          navbarTogglerr.classList.add("animate__flipOutX");
+          navbarTogglerr.classList.remove("animate__flip");
+        }
+        // If the navbar collapse element is hidden, add the animate__flip class and remove the animate__flipOutX class
+        else {
+          navbarTogglerr.classList.add("animate__flip");
+          navbarTogglerr.classList.remove("animate__flipOutX");
+        }
+      });
+    </script>
     <script>
       const aboutLink = document.querySelector('a[href="#about-section"]');
 
@@ -42,6 +67,13 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(window).scroll(function () {
+        if ($(".navbar-collapse").hasClass("show")) {
+          $(".navbar-toggler").click();
+        }
+      });
+    </script>
 
     <script>
       $(window).scroll(function () {
@@ -83,7 +115,7 @@
           aria-expanded="true"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon bi-list animate__animated"></span>
         </button>
 
         <div

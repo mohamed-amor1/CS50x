@@ -277,3 +277,37 @@ p {
     width: 40%;
   }
 }
+
+.navbar-toggler:hover .navbar-toggler-icon {
+  animation: none;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler {
+  border-color: #dfbaff;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav li:hover:before {
+    content: "   ";
+    position: absolute;
+    left: -1%;
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 3px;
+    background-color: #dfbaff;
+    margin-right: 50px;
+  }
+}

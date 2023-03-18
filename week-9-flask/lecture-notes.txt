@@ -1,0 +1,35 @@
+-- Week 9 Flask
+
+Flask is a popular Python web framework that allows developers to build web applications quickly and easily. It provides a lightweight and flexible architecture that can be used to develop everything from small personal websites to large enterprise applications.
+
+Jinja is a templating engine that is used by Flask to create dynamic HTML pages. It allows developers to create reusable HTML templates with placeholders for dynamic content, which can be populated by the application at runtime. Jinja provides a clean and readable syntax that makes it easy to create and maintain templates, and it also provides features like template inheritance and macros to help developers write efficient and reusable code. Together, Flask and Jinja make a powerful combination for building modern web applications.
+
+-- request.args
+request.args is a property of the Flask request object that contains a dictionary of the query parameters passed with a GET request. In other words, it allows you to retrieve the values of query string parameters that were included in the URL of a GET request.
+
+request.args.get("name", "world") retrieves the value of the "name" query parameter, or returns the string "world" if the "name" parameter is not present.
+
+The second argument to the get() method, in this case "world", specifies a default value to return if the "name" parameter is not present in the query string.
+
+So if the URL of the request was http://example.com/?name=John, then request.args.get("name", "world") would return the string "John", and the name variable would be set to "John".
+
+If the URL of the request was http://example.com/, then request.args.get("name", "world") would return the string "world", and the name variable would be set to "world".
+
+
+-- JSON
+
+JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is a popular format for exchanging data between different applications, including web applications.
+
+JSON is based on a subset of the JavaScript programming language and uses a key-value pair structure to represent data. In a JSON object, data is stored as a series of key-value pairs, where the keys are strings and the values can be strings, numbers, objects, arrays, or the literals true, false, and null. JSON objects are enclosed in curly braces {} and key-value pairs are separated by commas.
+
+For example, the following is a JSON object representing information about a person:
+
+{
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+
+Here, name, age, and city are the keys, and "John", 30, and "New York" are the values.
+
+JSON is widely used in web development, where it is often used to exchange data between a web application and a server using AJAX (Asynchronous JavaScript and XML) requests. JSON has largely replaced XML as the preferred format for data exchange in web development due to its simplicity and ease of use.

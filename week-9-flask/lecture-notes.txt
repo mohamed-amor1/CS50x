@@ -15,6 +15,18 @@ So if the URL of the request was http://example.com/?name=John, then request.arg
 
 If the URL of the request was http://example.com/, then request.args.get("name", "world") would return the string "world", and the name variable would be set to "world".
 
+-- Flask functions
+
+Flask: This function is used to create a Flask application.
+render_template: This function is used to render an HTML template.
+request: This function is used to handle HTTP requests and access request data.
+redirect: This function is used to redirect a user to a different URL.
+url_for: This function is used to generate URLs for a given view function.
+session: This function is used to store data between requests.
+flash: This function is used to display a message to the user on the next request.
+abort: This function is used to abort a request and return an error message.
+g: This function is used to store global variables that can be accessed throughout the application.
+make_response: This function is used to create a response object that can be returned to the client.
 
 -- JSON
 

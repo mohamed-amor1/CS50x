@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<hmtl lang="en">
+  <head>
+    <meta name="viewport" content="intitial-scale=1, width=device-width" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+
+    <title>Current Time in Cambridge</title>
+    <script type="text/javascript">
+      function updateClock() {
+        var now = new Date();
+        var seconds = now.getSeconds();
+        var secondsFormatted = (seconds < 10 ? "0" : "") + seconds;
+
+        // Get the current time in Amsterdam
+        var amsterdam_now = new Date(
+          now.toLocaleString("en-US", { timeZone: "Europe/Amsterdam" })
+        );
+
+        // Generate the date string for Amsterdam
+        var dateString = amsterdam_now.toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        });
+
+        // Generate the time string for Amsterdam
+        var timeString = amsterdam_now.toLocaleTimeString("en-GB", {
+          hour12: false,
+        });
+
+        // Generate the timezone string for Amsterdam
+        var timezoneString = amsterdam_now
+          .toLocaleTimeString("en-us", {
+            timeZoneName: "short",
+          })
+          .split(" ")[2];
+
+        // Combine the date, time, and timezone strings for Amsterdam
+        var timeStringWithSeconds = timeString.slice(0, -2) + secondsFormatted;
+        document.getElementById("time2").innerHTML =
+          dateString + " " + timeStringWithSeconds + " " + timezoneString;
+      }
+      setInterval(updateClock, 1000);
+    </script>
+
+    <script type="text/javascript">
+      function updateClock() {
+        var now = new Date();
+        var seconds = now.getSeconds();
+        var secondsFormatted = (seconds < 10 ? "0" : "") + seconds;
+        var timeString = now.toLocaleTimeString("en-US", {
+          hour12: false,
+          timeZone: "America/New_York",
+        });
+        var dateString = "{{ now.strftime('%d-%m-%Y') }} ";
+        var timezoneString = "{{ now.strftime('%Z') }}";
+        var timeStringWithSeconds = timeString.slice(0, -2) + secondsFormatted;
+        document.getElementById("time").innerHTML =
+          timeStringWithSeconds + " " + timezoneString;
+      }
+
+      // Call updateClock() when the page is loaded
+      window.onload = function () {
+        updateClock();
+        setInterval(updateClock, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+  </body>
+</hmtl>

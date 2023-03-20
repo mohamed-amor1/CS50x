@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ballon d'Or</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/ajax.js" type="text/javascript"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1 style="padding-top: 5%">Ballon d'Or winners</h1>
+    <div style="color: white" id="infodiv">Information goes here</div>
+    <div>
+      <form>
+        <select
+          name="players"
+          class="form-select"
+          aria-label="Default select example"
+          onchange="playerinfo(this.value);"
+        >
+          <option value="" disabled selected>Select a player</option>
+          <option value="messi">Lionel Messi</option>
+          <option value="ronaldo">Cristiano Ronaldo</option>
+          <option value="cruyff">Johan Cruyff</option>
+          <option value="platini">Michel Platini</option>
+          <option value="vanbasten">Marco van Basten</option>
+        </select>
+      </form>
+    </div>
+  </body>
+</html>

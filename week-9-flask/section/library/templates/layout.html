@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <title>La biblioteca de Babel</title>
+  </head>
+  <body>
+    {% block body %} {% endblock %}
+  </body>
+  <footer>&copy; 2023 Mohamed Amor. All rights reserved.</footer>
+</html>

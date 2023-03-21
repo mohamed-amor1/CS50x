@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.text-break.mt-3 {
+  text-align: justify; /* Justify the text */
+  word-wrap: break-word; /* Break the text when it reaches the end of the line */
+}
+
+body {
+  /* Set the maximum width of the page to 800 pixels */
+  max-width: 900px;
+  margin: 0 auto; /* Center the container horizontally */
+  font-family: "Noto Sans Mono", monospace;
+}
+
+input {
+  font-family: "Noto Sans Mono", monospace;
+  border-radius: 5px;
+  font-size: 16px;
+  border-style: solid;
+  padding: 10px 20px;
+}
+button {
+  font-family: "Noto Sans Mono", monospace;
+  background-color: #e0e1e2;
+  color: #1b1c1d;
+  border-radius: 5px;
+  font-size: 16px;
+  border-style: hidden;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #2185d0;
+  color: white;
+}
+
+td {
+  border: 1px solid #e8e8e8;
+}
+
+footer {
+  color: #2d3e50;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}

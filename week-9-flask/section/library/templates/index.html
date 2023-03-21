@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% block body %}
+
+<h1 class="mt-5">La Biblioteca de Babel</h1>
+
+<!--TODO: Implement a search form-->
+
+<form action="/" method="post">
+  <input type="text" name="page" autofocus placeholder="Enter a page number"" />
+  <button type="submit">View page</button>
+</form>
+
+<p class="text-break mt-3">{{ random_string }}</p>
+
+<!--TODO: Implement a search history-->
+<table class="table">
+  <thead>
+    <tr>
+      <th>Search History</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in history %}
+    <tr>
+      <td>{{ row ["page"] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block body %}
+<form action="/" method="post">
+  What is your favorite color?
+  <select name="color">
+    <option disabled selected>Select a color</option>
+    <option value="red">Harvard Crimson</option>
+    <option value="blue">Yale Blue</option>
+    <option value="green">Dartmouth Green</option>
+    <option value="orange">Princeton Orange</option>
+    <option value="maroon">University of Chicago Maroon</option>
+    <option value="navy">United States Naval Academy Navy</option>
+    <option value="gold">Purdue Old Gold</option>
+    <option value="purple">Northwestern Purple</option>
+    <option value="silver">Harvey Mudd College Silver</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}

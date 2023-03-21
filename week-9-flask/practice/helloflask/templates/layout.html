@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <title>Hello, Flask</title>
+  </head>
+  <body>
+    <h1>Hello, Flask</h1>
+    {% block body %}{% endblock %}
+  </body>
+</html>

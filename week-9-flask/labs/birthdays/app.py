@@ -66,8 +66,7 @@ def index():
         new_birthday = Birthdays(name=name, month=month, day=day)
         db.session.add(new_birthday)
         db.session.commit()
-
-        # Retrieve all the birthdays from the database and order them by month
+        flash("Birthday added successfully.")
 
         return redirect("/")
 

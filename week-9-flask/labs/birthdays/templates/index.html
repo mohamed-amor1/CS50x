@@ -12,6 +12,7 @@
     />
 
     <link href="/static/styles.css" rel="stylesheet" />
+
     <title>Birthdays</title>
   </head>
   <body>
@@ -20,37 +21,87 @@
     </div>
     <div class="container">
       <div class="section">
-        <h2>Add a Birthday</h2>
-        <!-- TODO: Create a form for users to submit a name, a month, and a day -->
-        <form action="/" method="post">
-          <input type="text" name="name" autofocus placeholder="Name"" /> <input
-          type="number" name="month" placeholder="Month"" /> <input
-          type="number" name="day" autofocus placeholder="Day"" />
-
-          <button type="submit">Add Birthday</button>
+        {% if edit_mode and bday %}
+        <h2>Edit Birthday</h2>
+        <form
+          method="post"
+          action="{{ url_for('edit', id=bday.id) }}"
+          id="edit-form"
+        >
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{ bday.name }}" />
+          </div>
+          <div>
+            <label for="month">Month:</label>
+            <input
+              type="text"
+              name="month"
+              id="month"
+              value="{{ bday.month }}"
+            />
+          </div>
+          <div>
+            <label for="day">Day:</label>
+            <input type="text" name="day" id="day" value="{{ bday.day }}" />
+          </div>
+          <div>
+            <button type="submit">Update Birthday</button>
+          </div>
         </form>
+        {% endif %}
       </div>
+    </div>
 
-      <div class="section">
-        <h2>All Birthdays</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Birthday</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- TODO: Loop through the database entries to display them in this table -->
-            {% for bday in birthdays %}
-            <tr>
-              <td>{{ bday.name }}</td>
-              <td>{{ bday.month }}/{{ bday.day }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+    <div class="container" id="add-birthday">
+      <h2>Add a Birthday</h2>
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <p style="color: blue; text-align: center">
+        {% for message in messages %} {{ message }}<br />
+        {% endfor %}
+      </p>
+      {% endif %} {% endwith %}
+
+      <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+      <form action="/" method="post">
+        <input type="text" name="name" autofocus placeholder="Name"" /> <input
+        type="number" name="month" placeholder="Month"" /> <input type="number"
+        name="day" autofocus placeholder="Day"" />
+
+        <button type="submit">Add Birthday</button>
+      </form>
+      <p>{{ error }}</p>
+    </div>
+
+    <div class="container" id="all-birthdays">
+      <h2>All Birthdays</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- TODO: Loop through the database entries to display them in this table -->
+          {% for bday in birthdays %}
+          <tr>
+            <td>{{ bday.name }}</td>
+            <td>{{ bday.month }}/{{ bday.day }}</td>
+            <td>
+              <form action="{{ url_for('delete', id=bday.id) }}" method="POST">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </td>
+            <td>
+              <a href="{{ url_for('edit', id=bday.id)}}" class="btn btn-primary"
+                >Edit</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

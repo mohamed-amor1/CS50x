@@ -15,7 +15,7 @@ body {
   padding-right: 15px;
   text-align: center;
   width: 90%;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Cormorant", serif;
 }
 
 .header {
@@ -31,7 +31,7 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.5rem;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Cormorant", serif;
 }
 
 .section:hover {
@@ -41,7 +41,7 @@ body {
 
 h1 {
   font-size: 48px;
-  font-family: "Cormorant", serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 button,

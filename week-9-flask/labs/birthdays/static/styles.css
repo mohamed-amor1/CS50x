@@ -2,7 +2,7 @@ body {
   background-color: #fff;
   color: #212529;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1.5;
   margin: 0;
   text-align: left;
@@ -40,7 +40,7 @@ body {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 48pt;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -57,6 +57,10 @@ input[type="submit"] {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   vertical-align: middle;
+}
+
+.btn.btn-danger {
+  font-family: "Cormorant", serif;
 }
 
 input[type="text"],
@@ -85,4 +89,52 @@ table td {
 
 tbody tr:nth-of-type(odd) {
   background-color: rgb(179, 208, 255, 0.3);
+}
+
+#animation0 {
+  width: 5%;
+  height: auto;
+  margin: 0 auto;
+}
+#animation1 {
+  width: 5%;
+  height: auto;
+  margin: 0 auto;
+}
+#animation2 {
+  width: 5%;
+  height: auto;
+  margin: 0 auto;
+}
+#animation3 {
+  width: 5%;
+  height: auto;
+  margin: 0 auto;
+}
+#animation4 {
+  width: 5%;
+  height: auto;
+  margin: 0 auto;
+}
+#animation5 {
+  width: 5%;
+  height: auto;
+  margin: 0 auto;
+}
+
+div[id^="animation"] {
+  display: inline-block;
+  justify-content: center;
+}
+
+.containerspecial {
+  text-align: center;
+}
+
+footer {
+  color: #2d3e50;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-family: "Cormorant", serif;
 }

@@ -12,12 +12,21 @@
     />
 
     <link href="/static/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.min.js"></script>
 
     <title>Birthdays</title>
   </head>
   <body>
     <div class="header">
       <h1>Birthdays</h1>
+    </div>
+    <div class="containerspecial">
+      <div id="animation0"></div>
+      <div id="animation1"></div>
+      <div id="animation2"></div>
+      <div id="animation3"></div>
+      <div id="animation4"></div>
+      <div id="animation5"></div>
     </div>
     <div class="container">
       <div class="section">
@@ -87,7 +96,7 @@
           {% for bday in birthdays %}
           <tr>
             <td>{{ bday.name }}</td>
-            <td>{{ bday.month }}/{{ bday.day }}</td>
+            <td>{{ bday.day }}/{{ bday.month }}</td>
             <td>
               <form action="{{ url_for('delete', id=bday.id) }}" method="POST">
                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -103,5 +112,50 @@
         </tbody>
       </table>
     </div>
+    <script>
+      var animationLeft = bodymovin.loadAnimation({
+        container: document.getElementById("animation0"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: '{{ url_for("static", filename="json/party.json") }}',
+      });
+      var animationLeft = bodymovin.loadAnimation({
+        container: document.getElementById("animation1"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: '{{ url_for("static", filename="json/party.json") }}',
+      });
+      var animationLeft = bodymovin.loadAnimation({
+        container: document.getElementById("animation2"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: '{{ url_for("static", filename="json/party.json") }}',
+      });
+      var animationLeft = bodymovin.loadAnimation({
+        container: document.getElementById("animation3"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: '{{ url_for("static", filename="json/party.json") }}',
+      });
+      var animationLeft = bodymovin.loadAnimation({
+        container: document.getElementById("animation4"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: '{{ url_for("static", filename="json/party.json") }}',
+      });
+      var animationLeft = bodymovin.loadAnimation({
+        container: document.getElementById("animation5"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: '{{ url_for("static", filename="json/party.json") }}',
+      });
+    </script>
   </body>
+  <footer>&copy; 2023 Mohamed Amor. All rights reserved.</footer>
 </html>

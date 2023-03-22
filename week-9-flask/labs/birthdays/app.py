@@ -62,10 +62,13 @@ def index():
             flash("Invalid day value. Please enter a positive integer between 1 and 31.")
             return redirect(request.url)
 
-        # Add the user's entry into the database
+       # Add the user's entry into the database
         new_birthday = Birthdays(name=name, month=month, day=day)
         db.session.add(new_birthday)
         db.session.commit()
+
+        # Retrieve all the birthdays from the database and order them by month
+
         return redirect("/")
 
     edit_id = request.args.get("edit_id")
@@ -81,7 +84,7 @@ def index():
     else:
 
         # TODO: Display the entries in the database on index.html
-        birthdays = Birthdays.query.all()
+        birthdays = Birthdays.query.order_by(Birthdays.month).all()
         return render_template("index.html", birthdays=birthdays)
 
 

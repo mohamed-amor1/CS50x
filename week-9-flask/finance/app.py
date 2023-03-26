@@ -264,7 +264,7 @@ def register():
             return apology("must provide password", 403)
 
         # Validate the password
-        elif not validate_password("password"):
+        elif not validate_password(request.form.get("password")):
             return apology("Password must contain at least one letter, one number, and one symbol", 400)
 
             # Ensure password confirmation was submitted
@@ -391,7 +391,7 @@ def change_password():
         if not request.form.get("confirm_new_password"):
             return apology("must provide password confirmation", 400)
 
-        elif not validate_password("password"):
+        elif not validate_password(request.form.get("new_password")):
             return apology("Password must contain at least one letter, one number, and one symbol")
 
         # Ensure passwords match
